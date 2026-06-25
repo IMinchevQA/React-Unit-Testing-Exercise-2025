@@ -1,8 +1,12 @@
-import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { describe, it, expect, afterEach } from 'vitest';
+import { cleanup, render, screen } from '@testing-library/react';
 import App from './App';
 import { createRoot } from 'react-dom/client';
 import { act } from 'react';
+
+afterEach(() => {
+    cleanup();
+})
 
 describe('App component', () => {
     it('Should render the heading', async () => {
@@ -30,5 +34,21 @@ describe('App component', () => {
         expect(h1Element).toBeDefined();
         expect(h1Element.textContent).toBe('Hello World');
 
+        // Cleanup document 
+        document.body.innerHTML = '';
     });
+
+    it('Should have heading using testing-library/react', async () => {
+        // Render component
+        render(<App />);
+
+        screen.debug();
+
+
+        // Get heading element from DOM
+        const h1Element = screen.getByRole('heading', { level: 1 });
+        //Asert
+        expect(h1Element).toBeDefined();
+        expect(h1Element.textContent).toBe('Hello World');
+    })
 });
