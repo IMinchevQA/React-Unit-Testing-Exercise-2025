@@ -1,10 +1,34 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import { createRoot } from 'react-dom/client';
+import { act } from 'react';
 
 describe('App component', () => {
-    it('Should render the heading', () => {
-        render(<App />);
-        expect(screen.getByText('Hello World')).toBeDefined();
+    it('Should render the heading', async () => {
+
+        // Create empty real html node
+        const container = document.createElement('div');
+
+        // Attach to the DOM document
+        document.body.appendChild(container);
+
+        await (act(() => {
+            // Create React root element
+            const rootElement = createRoot(container);
+
+            // Render component
+            rootElement.render(<App />);
+        }))
+
+
+
+        // Get heading element from DOM
+        const h1Element = document.querySelector('h1');
+
+        //Asert
+        expect(h1Element).toBeDefined();
+        expect(h1Element.textContent).toBe('Hello World');
+
     });
 });
