@@ -41,5 +41,21 @@ describe('Divide funcionallity', () => {
         const expectedResult = 3;
 
         expect(divide(inputNumber, dividerNumber)).toBe(expectedResult);
+    });
+
+    it.skip('Should return infinity after zero devision', () => {
+        const inputNumber = 6;
+        const zeroNumber = 0;
+        const infinityResult = Infinity;
+
+        expect(divide(inputNumber, zeroNumber)).toBe(infinityResult);
+    });
+
+    it('Should throw after zero division', () => {
+        const inputNumber = 6;
+        const zeroNumber = 0;
+        const expectedResult = "Division by zero is not allowed";
+
+        expect(() => divide(inputNumber, zeroNumber)).toThrow(expectedResult);
     })
 })
