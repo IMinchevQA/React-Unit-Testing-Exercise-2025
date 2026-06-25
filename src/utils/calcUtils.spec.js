@@ -1,40 +1,45 @@
-import { test, it, assert, expect } from 'vitest';
+import { test, it, assert, expect, describe } from 'vitest';
 import { add, divide } from './calcUtils';
 
 // test('Addition works correctly', () => {});
 
-it('Should return positive number when adding two positive numbers', () => {
-    //AAA Pattern
+describe('Add functionallity', () => {
 
-    // Arrange
-    const firstNumber = 1;
-    const secondNumber = 2;
-    const expectedResult = 3;
-    
-    // Act
-    const actualResult = add(firstNumber, secondNumber);
+    it('Should return positive number when adding two positive numbers', () => {
+        //AAA Pattern
 
-    // Assert
+        // Arrange
+        const firstNumber = 1;
+        const secondNumber = 2;
+        const expectedResult = 3;
 
-    // TDD - test driven check
-    assert.equal(expectedResult, actualResult);
+        // Act
+        const actualResult = add(firstNumber, secondNumber);
 
-    // BDD - behavior driven check
-    expect(actualResult).toBe(expectedResult);
-});
+        // Assert
 
-it('Should return negative result number when adding two negative numbers', () => {
-    const firstNumber = -1;
-    const secondNumber = -2;
-    const expectedResult = -3;
+        // TDD - test driven check
+        assert.equal(expectedResult, actualResult);
 
-    expect(add(firstNumber, secondNumber)).toBe(expectedResult);
-});
+        // BDD - behavior driven check
+        expect(actualResult).toBe(expectedResult);
+    });
 
-it('Should return half the number value after division by two', () => {
-    const inputNumber = 6;
-    const dividerNumber = 2;
-    const expectedResult = 3;
+    it('Should return negative result number when adding two negative numbers', () => {
+        const firstNumber = -1;
+        const secondNumber = -2;
+        const expectedResult = -3;
 
-    expect(divide(inputNumber, dividerNumber)).toBe(expectedResult);
+        expect(add(firstNumber, secondNumber)).toBe(expectedResult);
+    });
+})
+
+describe('Divide funcionallity', () => {
+    it('Should return half the number value after division by two', () => {
+        const inputNumber = 6;
+        const dividerNumber = 2;
+        const expectedResult = 3;
+
+        expect(divide(inputNumber, dividerNumber)).toBe(expectedResult);
+    })
 })
