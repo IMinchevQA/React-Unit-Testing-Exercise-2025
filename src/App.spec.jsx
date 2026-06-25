@@ -6,6 +6,7 @@ import { act } from 'react';
 
 afterEach(() => {
     cleanup();
+    document.body.innerHTML = '';
 })
 
 describe('App component', () => {
@@ -33,41 +34,29 @@ describe('App component', () => {
         //Asert
         expect(h1Element).toBeDefined();
         expect(h1Element.textContent).toBe('Vite + React');
-
-        // Cleanup document 
-        document.body.innerHTML = '';
     });
 
     it('Should have heading using testing-library/react', async () => {
         // Render component
         render(<App />);
 
-        screen.debug();
-
-
         // Get heading element from DOM
         const h1Element = screen.getByRole('heading', { level: 1 });
         //Asert
         expect(h1Element).toBeDefined();
         expect(h1Element.textContent).toBe('Vite + React');
-
-        // Cleanup document 
-        document.body.innerHTML = '';
     });
 
     it('Should have heading using testing-library/jest-dom/vitest', async () => {
         // Render component
         render(<App />);
 
-        screen.debug();
-
 
         // Get heading element from DOM
         const h1Element = screen.getByText('Vite + React');
-        
+
         //Asert
         expect(h1Element).toBeInTheDocument();
-        document.body.innerHTML = '';
     });
 
     it('Should increment count on button click', async () => {
@@ -78,5 +67,14 @@ describe('App component', () => {
         fireEvent.click(buttonElement);
 
         expect(buttonElement.textContent).toBe('count is 1');
+    });
+
+    it('Should match snapshot', async () => {
+        const { container } = render(<App />);
+
+        screen.debug();
+
+
+        expect(container).toMatchSnapshot();
     })
 });
