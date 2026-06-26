@@ -1,11 +1,10 @@
 import { describe, it, expect, afterEach } from 'vitest';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 import { createRoot } from 'react-dom/client';
 import { act } from 'react';
 
 afterEach(() => {
-    cleanup();
     document.body.innerHTML = '';
 })
 

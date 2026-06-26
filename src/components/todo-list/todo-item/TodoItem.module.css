@@ -1,0 +1,19 @@
+.todoItem {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0.4rem 0;
+    font-size: 1rem;
+    cursor: pointer;
+    
+}
+
+.todoItem::before {
+    content: '•';
+    font-size: 1.2rem;
+}
+
+.todoItem.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}

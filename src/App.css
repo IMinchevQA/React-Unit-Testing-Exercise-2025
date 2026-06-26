@@ -1,62 +1,66 @@
+html {
+    font-size: 16px;
+}
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: sans-serif;
-  background-color: #1a1a2e;
-  color: #e0e0e0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    font-family: sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .app {
-  text-align: center;
-  padding: 2rem;
+    text-align: center;
+    padding: 2rem;
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: #a78bfa;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #a78bfa;
 }
 
 .card {
-  background-color: #16213e;
-  border-radius: 12px;
-  padding: 2rem;
-  margin: 1rem auto;
-  max-width: 400px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    background-color: #16213e;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 button {
-  background-color: #7c3aed;
-  color: white;
-  border: none;
-  padding: 0.6rem 1.4rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
+    background-color: #7c3aed;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 button:hover {
-  background-color: #6d28d9;
+    background-color: #6d28d9;
 }
 
 .card p {
-  margin-top: 1rem;
-  color: #9ca3af;
-  font-size: 0.9rem;
+    margin-top: 1rem;
+    color: #9ca3af;
+    font-size: 0.9rem;
 }
 
 .read-the-docs {
-  margin-top: 1.5rem;
-  color: #6b7280;
-  font-size: 0.85rem;
+    margin-top: 1.5rem;
+    color: #6b7280;
+    font-size: 0.85rem;
 }
