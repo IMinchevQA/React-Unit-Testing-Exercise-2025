@@ -7,7 +7,9 @@ function TodoItem({
     onClickHandler
 }) {
     return (
-        <li onClick={() => onClickHandler(id)} className={`${styles.todoItem}${completed ? ` ${styles.completed}` : ''}`}>
+        <li onClick={() => onClickHandler(id)}
+            style={{ textDecoration: completed ? 'line-through' : 'none' }}
+            className={styles.todoItem}>
             {text}
         </li>
     );
